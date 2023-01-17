@@ -1,15 +1,14 @@
 import React from "react";
 import "./App.css";
+import NavBar from "./components/navbar/NavBar";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
-  const thisFunction = () => {
-    console.log(1 + 2);
-  };
-
   return (
-    <div>
-      <button onClick={thisFunction}></button>
-    </div>
+    <>
+      <NavBar name="Navbar" />
+      <LandingPage name="landing page" />
+    </>
   );
 }
 
