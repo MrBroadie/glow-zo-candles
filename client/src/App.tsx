@@ -5,7 +5,7 @@ import LandingPage from "./pages/LandingPage";
 function App() {
   return (
     <>
-      <NavBar name="Navbar" />
+      <NavBar />
       <LandingPage name="landing page" />
     </>
   );

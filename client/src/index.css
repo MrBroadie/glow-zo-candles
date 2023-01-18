@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 * {
-  @apply font-sans;
+  @apply font-serif tracking-wide;
 }

@@ -3,13 +3,9 @@ import candle from "../../media/candle-burning-flame.png";
 import AccountButton from "./AccountButton";
 import BasketButton from "./BasketButton";
 
-type Props = {
-  name: string;
-};
-
-const NavBar = (props: Props) => {
+const NavBar = () => {
   const styleWords =
-    "block p-4 text-sm font-semibold text-gray-400 hover:bg-pink-50 hover:text-rose-300 hover:cursor-pointer rounded";
+    "block p-4 text-lg hover:bg-pink-50 hover:text-rose-300 hover:cursor-pointer rounded border-2 border-white hover:border-rose-300";
   const styleIcons = "w-10 hover:cursor-pointer";
 
   return (
@@ -17,7 +13,7 @@ const NavBar = (props: Props) => {
       <div className="sm:flex flex-row justify-between items-center w-full">
         <a
           href="/"
-          className="sm:inline-flex px-4 py-4 font-semibold hover:bg-pink-50 hover:text-rose-300 rounded"
+          className="sm:inline-flex px-4 py-4 font-semibold hover:bg-pink-50 hover:text-rose-300 rounded border-2 border-white hover:border-rose-300"
         >
           <img src={candle} alt="logo" className={styleIcons} />
           <span className="self-end">GlowZo</span>
