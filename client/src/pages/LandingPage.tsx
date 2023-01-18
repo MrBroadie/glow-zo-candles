@@ -1,14 +1,13 @@
 import React from "react";
 import LandingImage from "../components/landingPage/LandingImage";
+import LandingProducts from "../components/landingPage/LandingProducts";
+import { products } from "../components/products/products";
 
-type Props = {
-  name: string;
-};
-
-const LandingPage = (props: Props) => {
+const LandingPage = () => {
   return (
     <>
       <LandingImage />
+      <LandingProducts products={products} />
     </>
   );
 };

@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <LandingPage name="landing page" />
+      <LandingPage />
     </>
   );
 }
