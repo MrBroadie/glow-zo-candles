@@ -1,19 +1,26 @@
 import React from "react";
 import { productsObject } from "../../interfaces/productsInterface";
+import MostPopularCandles from "./MostPopularCandles";
 
 type Props = {
   product: productsObject;
 };
 
 const LandingProduct = ({ product }: Props) => {
-  const listItem =
-    "bg-rose-50 text-rose-300 w-full h-full h rounded-lg flex flex-col items-center justify-around p-4 m-2 hover:border-2 ";
-
   return (
-    <button className={listItem}>
-      <img src={product.displayImg} className="w-full h-5/6 object-contain	" />
-      <p>{product.name}</p>
-    </button>
+    <div className="h-full w-full ">
+      <div className="grid grid-cols-4 justify-items-center h-full">
+        {product.products.map((productObject) => {
+          return (
+            <MostPopularCandles
+              name={product.name}
+              productObject={productObject}
+              key={productObject.colour}
+            />
+          );
+        })}
+      </div>
+    </div>
   );
 };
 
