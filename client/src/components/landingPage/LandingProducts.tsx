@@ -23,7 +23,7 @@ const LandingProducts = ({ products }: Props) => {
           return <LandingProduct product={product} key={product.name} />;
         })}
       </div>
-      <button className="font-sans p-4 m-4 bg-rose-300 rounded text-white hover:bg-pink-50 hover:text-rose-300 border-2 border-white hover:border-rose-300 text-center">
+      <button className="font-sans p-4 m-4 bg-rose-300 rounded text-white hover:bg-rose-50 hover:text-rose-300 border-2 border-white hover:border-rose-300 text-center">
         See all products
       </button>
     </div>

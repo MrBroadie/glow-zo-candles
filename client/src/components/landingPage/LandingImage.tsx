@@ -21,7 +21,7 @@ const LandingImage = () => {
             for your home
           </p>
         </div>
-        <button className="font-sans p-4 bg-rose-300 rounded text-white hover:bg-pink-50 hover:text-rose-300 border-2 border-pink-50 hover:border-rose-300">
+        <button className="font-sans p-4 bg-rose-300 rounded text-white hover:bg-rose-50 hover:text-rose-300 border-2 border-rose-50 hover:border-rose-300">
           Discover our collection
         </button>
       </div>
