@@ -1,5 +1,5 @@
 import React from "react";
-import candleJar from "../../media/many_jars.jpeg";
+import candleJar from "../../media/backgroundImg.webp";
 import candle from "../../media/candle-burning-flame.png";
 
 const LandingImage = () => {
@@ -16,7 +16,7 @@ const LandingImage = () => {
           <h1 className="m-4 font-sans text-xl sm:text-2xl md:text-3xl lg:text-4xl">
             The independent candle
           </h1>
-          <p className="font-sans text-sm md:text-base text-slate-400">
+          <p className="font-sans text-sm md:text-base text-slate-500">
             All handmade with natural soy wax. GlowZo is the perfect companion
             for your home
           </p>

@@ -1,6 +1,7 @@
 import React from "react";
 import LandingImage from "../components/landingPage/LandingImage";
 import LandingProducts from "../components/landingPage/LandingProducts";
+import SoyWax from "../components/landingPage/SoyWax";
 import { products } from "../components/products/products";
 
 const LandingPage = () => {
@@ -8,6 +9,7 @@ const LandingPage = () => {
     <>
       <LandingImage />
       <LandingProducts products={products} />
+      <SoyWax />
     </>
   );
 };

@@ -12,7 +12,7 @@ const MostPopularCandles = (props: Props) => {
     props.productObject.colour.substring(1).toLowerCase();
 
   return (
-    <div className="bg-slate-100 m-2 flex flex-col shadow-lg w-5/6 text-slate-600 hover:text-rose-300 hover:cursor-pointer">
+    <div className="bg-slate-50 m-2 flex flex-col shadow-lg w-5/6 text-slate-500 hover:text-rose-300 hover:cursor-pointer">
       <img
         src={props.productObject.img}
         alt={props.productObject.colour}
@@ -22,7 +22,7 @@ const MostPopularCandles = (props: Props) => {
         <p className="font-sans text-sm md:text-base ">
           {colour} {props.name}
         </p>
-        <p className="font-sans text-sm md:text-base self-end text-green-500">
+        <p className="font-sans text-sm md:text-base self-end">
           £{props.productObject.price}
         </p>
       </div>
