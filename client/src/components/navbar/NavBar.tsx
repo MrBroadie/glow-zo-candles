@@ -1,11 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import candle from "../../media/candle-burning-flame.png";
 import AccountButton from "./AccountButton";
 import BasketButton from "./BasketButton";
 
 const NavBar = () => {
+  const navigate = useNavigate();
+
   const styleWords =
-    "block p-4 text-lg hover:bg-rose-50 hover:text-rose-300 hover:cursor-pointer rounded border-2 border-white hover:border-rose-300";
+    "block p-4 text-lg hover:bg-rose-50 hover:text-rose-300 rounded border-2 border-white hover:border-rose-300";
   const styleIcons = "w-10 hover:cursor-pointer";
 
   return (
@@ -19,9 +22,18 @@ const NavBar = () => {
           <span className="self-end">GlowZo</span>
         </a>
         <ul className="sm:inline-flex sm:space-x-16">
-          <li className={styleWords}>Collection</li>
-          <li className={styleWords}>About</li>
-          <li className={styleWords}>Contact us</li>
+          <button
+            onClick={() => navigate("/collection")}
+            className={styleWords}
+          >
+            Collection
+          </button>
+          <button onClick={() => navigate("/about")} className={styleWords}>
+            About
+          </button>
+          <button onClick={() => navigate("/contact")} className={styleWords}>
+            Contact us
+          </button>
         </ul>
         <div className="w-full inline-flex space-x-4 sm:w-auto">
           <AccountButton styleIcons={styleIcons} />

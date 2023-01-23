@@ -6,6 +6,7 @@ import ProductPage from "./defaultPages/ProductPage";
 import ContactUsPage from "./defaultPages/ContactUsPage";
 import AboutPage from "./defaultPages/AboutPage";
 import BasketPage from "./defaultPages/BasketPage";
+import Collection from "./defaultPages/Collection";
 
 export const defaultPages = [
   {
@@ -15,8 +16,8 @@ export const defaultPages = [
     showDefault: true,
   },
   {
-    title: "Products",
-    path: "/products",
+    title: "Product",
+    path: "/product/:id",
     element: <ProductPage />,
     showDefault: true,
   },
@@ -36,6 +37,12 @@ export const defaultPages = [
     title: "Basket",
     path: "/basket",
     element: <BasketPage />,
+    showDefault: true,
+  },
+  {
+    title: "Collection",
+    path: "/collection",
+    element: <Collection />,
     showDefault: true,
   },
 ];
