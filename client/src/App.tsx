@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./components/footer/Footer";
 import NavBar from "./components/navbar/NavBar";
 import LandingPage from "./pages/LandingPage";
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <NavBar />
       <LandingPage />
+      <Footer />
     </>
   );
 }
