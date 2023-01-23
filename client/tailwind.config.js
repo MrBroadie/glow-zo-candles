@@ -13,6 +13,9 @@ module.exports = {
         "screen/50": "50vh",
         "screen/40": "40vh",
       }),
+      colors: {
+        darkBlue: "rgba(21,38,67,255)",
+      },
     },
   },
   plugins: [],

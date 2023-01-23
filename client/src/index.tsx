@@ -1,15 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { Auth0Provider } from "@auth0/auth0-react";
+
+// eslint-disable-next-line no-undef
+const domain = process.env.REACT_APP_AUTH0_DOMAIN as string;
+// eslint-disable-next-line no-undef
+const client = process.env.REACT_APP_AUTH0_CLIENT_ID as string;
+// eslint-disable-next-line no-undef
+// const audience = process.env.REACT_APP_AUTH0_AUDIENCE as string;
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Auth0Provider
+      domain={domain}
+      clientId={client}
+      // audience={audience}
+      // redirectUri={window.location.origin}
+    >
+      <App />
+    </Auth0Provider>
   </React.StrictMode>
 );
 

@@ -1,9 +1,8 @@
 import React from "react";
-import candle from "../../media/candle-burning-flame.png";
 
 const Footer = () => {
   return (
-    <div className="w-full bg-neutral-800 h-screen/40 pt-24 px-48">
+    <div className="w-full bg-neutral-800 h-screen/40 pt-20 px-48">
       <div className="flex text-white justify-around h-full border-t-2 border-white text-m p-10  ">
         <ul className="flex flex-col h-full justify-between ">
           <li className="font-sans underline underline-offset-4 ">

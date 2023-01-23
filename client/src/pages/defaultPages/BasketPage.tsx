@@ -1,10 +1,6 @@
 import React from "react";
 
-type Props = {
-  name: string;
-};
-
-const BasketPage = (props: Props) => {
+const BasketPage = () => {
   return <div>BasketPage</div>;
 };
 

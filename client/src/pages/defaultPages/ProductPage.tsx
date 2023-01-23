@@ -1,10 +1,6 @@
 import React from "react";
 
-type Props = {
-  name: string;
-};
-
-const ProductPage = (props: Props) => {
+const ProductPage = () => {
   return <div>ProductPage</div>;
 };
 
