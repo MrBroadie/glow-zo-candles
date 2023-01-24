@@ -54,6 +54,12 @@ export const authPages = [
     element: <ThankYouPage />,
     showDefault: false,
   },
+  {
+    title: "Orders",
+    path: "/orders/:userId",
+    element: <ThankYouPage />,
+    showDefault: false,
+  },
 ];
 
 const errorRerouterAuth = {

@@ -11,7 +11,7 @@ const SoyWax = () => {
             fragrant soy wax
           </h1>
           <p className="font-sans text-sm md:text-base text-rose-300">
-            Made for you home and your wellness
+            Made for your home and your wellness
           </p>
         </div>
         <ul className="font-sans text-sm md:text-base text-slate-500">

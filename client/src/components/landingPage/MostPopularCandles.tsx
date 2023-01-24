@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { productObject } from "../../interfaces/productsInterface";
 
 type Props = {
@@ -7,12 +8,20 @@ type Props = {
 };
 
 const MostPopularCandles = (props: Props) => {
+  const navigate = useNavigate();
   const colour =
     props.productObject.colour[0].toUpperCase() +
     props.productObject.colour.substring(1).toLowerCase();
 
   return (
-    <div className="bg-slate-50 m-2 flex flex-col shadow-lg w-5/6 text-slate-500 hover:text-rose-300 hover:cursor-pointer">
+    <button
+      onClick={() =>
+        navigate(`/product/${props.productObject.id}`, {
+          state: { productObject: props.productObject },
+        })
+      }
+      className="bg-slate-50 m-2 flex flex-col shadow-lg w-5/6 text-slate-500 hover:text-rose-300 hover:cursor-pointer"
+    >
       <img
         src={props.productObject.img}
         alt={props.productObject.colour}
@@ -26,7 +35,7 @@ const MostPopularCandles = (props: Props) => {
           £{props.productObject.price}
         </p>
       </div>
-    </div>
+    </button>
   );
 };
 

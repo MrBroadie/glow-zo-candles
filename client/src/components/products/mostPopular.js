@@ -10,6 +10,7 @@ export const products = [
     displayImg: yellowCandle,
     products: [
       {
+        type: "Jar",
         id: "yellowJar",
         colour: "yellow",
         img: yellowCandle,
@@ -17,6 +18,7 @@ export const products = [
         price: 8.99,
       },
       {
+        type: "Jar",
         id: "whiteJar",
         colour: "white",
         img: whiteCandle,
@@ -24,6 +26,7 @@ export const products = [
         price: 8.99,
       },
       {
+        type: "Jar",
         id: "blueJar",
         colour: "blue",
         img: blueCandle,
@@ -31,6 +34,7 @@ export const products = [
         price: 8.99,
       },
       {
+        type: "Jar",
         id: "greyJar",
         colour: "grey",
         img: greyCandle,
@@ -38,6 +42,7 @@ export const products = [
         price: 8.99,
       },
       {
+        type: "Jar",
         id: "greenJar",
         colour: "green",
         img: pinkCandle,
@@ -45,6 +50,7 @@ export const products = [
         price: 8.99,
       },
       {
+        type: "Jar",
         id: "magentaJar",
         colour: "Magenta",
         img: pinkCandle,
@@ -52,6 +58,7 @@ export const products = [
         price: 8.99,
       },
       {
+        type: "Jar",
         id: "purpleJar",
         colour: "Purple",
         img: pinkCandle,
@@ -59,6 +66,7 @@ export const products = [
         price: 8.99,
       },
       {
+        type: "Jar",
         id: "pinkJar",
         colour: "pinkJar",
         img: pinkCandle,
