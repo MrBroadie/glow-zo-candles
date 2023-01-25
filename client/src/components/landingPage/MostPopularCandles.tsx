@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { productObject } from "../../interfaces/productsInterface";
 
 type Props = {
-  name: string;
   productObject: productObject;
 };
 
@@ -20,7 +19,7 @@ const MostPopularCandles = (props: Props) => {
           state: { productObject: props.productObject },
         })
       }
-      className="bg-slate-50 m-2 flex flex-col shadow-lg w-5/6 text-slate-500 hover:text-rose-300 hover:cursor-pointer"
+      className="bg-slate-50 m-2 flex flex-col shadow-md w-5/6 text-slate-500 hover:text-rose-300 hover:cursor-pointer"
     >
       <img
         src={props.productObject.img}
@@ -29,7 +28,7 @@ const MostPopularCandles = (props: Props) => {
       />
       <div className="bg-white w-full flex flex-col p-2 h-full justify-center">
         <p className="font-sans text-sm md:text-base ">
-          {colour} {props.name}
+          {colour} {props.productObject.type}
         </p>
         <p className="font-sans text-sm md:text-base self-end">
           £{props.productObject.price}

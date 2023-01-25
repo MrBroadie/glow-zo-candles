@@ -35,6 +35,7 @@ export const collection = [
         price: 8.99,
       },
       {
+        type: "Jar",
         id: "greyJar",
         colour: "grey",
         img: greyCandle,
@@ -72,7 +73,7 @@ export const collection = [
         type: "Jar",
 
         id: "pinkJar",
-        colour: "pinkJar",
+        colour: "pink",
         img: pinkCandle,
         scents: ["vanilla", "pear"],
         price: 8.99,
@@ -149,7 +150,7 @@ export const collection = [
         type: "Bubble",
 
         id: "pinkBubble",
-        colour: "pinkJar",
+        colour: "pink",
         img: pinkCandle,
         scents: ["vanilla", "pear"],
         price: 8.99,
@@ -193,6 +194,7 @@ export const collection = [
         price: 8.99,
       },
       {
+        type: "Wax Melt",
         id: "greenWaxMelt",
         colour: "green",
         img: pinkCandle,
@@ -218,7 +220,7 @@ export const collection = [
       {
         type: "Wax Melt",
         id: "pinkWaxMelt",
-        colour: "pinkJar",
+        colour: "pink",
         img: pinkCandle,
         scents: ["vanilla", "pear"],
         price: 8.99,

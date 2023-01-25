@@ -10,10 +10,8 @@ export const defaultPageRoutes = pagesData
     return <Route {...routeArgs} key={title} />;
   });
 
-export const authPageRoutes = pagesData
-  .filter((page) => !page.showDefault)
-  .map(({ path, element, title }) => {
-    const routeArgs = { path, element };
+export const authPageRoutes = pagesData.map(({ path, element, title }) => {
+  const routeArgs = { path, element };
 
-    return <Route {...routeArgs} key={title} />;
-  });
+  return <Route {...routeArgs} key={title} />;
+});

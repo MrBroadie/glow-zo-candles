@@ -13,7 +13,6 @@ const LandingProduct = ({ product }: Props) => {
         {product.products.map((productObject) => {
           return (
             <MostPopularCandles
-              name={product.name}
               productObject={productObject}
               key={productObject.colour}
             />

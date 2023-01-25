@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import Button from "../../components/button/Button";
 
 const ProductPage = () => {
   const [qty, setQty] = useState(1);
@@ -62,10 +63,7 @@ const ProductPage = () => {
           </div>
         </div>
         <div className="flex w-1/2 h-full items-end p-2 justify-center bg-white rounded-r shadow-custom">
-          <button className="font-sans w-1/2 p-4 bg-rose-300 rounded text-white hover:bg-rose-50 hover:text-rose-300 border-2 border-white hover:border-rose-300 text-center">
-            Add to basket
-          </button>
-          {/* useContext to update basket */}
+          <Button text="Add to basket" route={"/basket"} basket={true} />
         </div>
       </div>
       <div className="flex justify-center h-full w-full items-center">

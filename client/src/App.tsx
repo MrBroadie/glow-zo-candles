@@ -9,7 +9,7 @@ import { AuthPages, Pages } from "./pages";
 
 function App() {
   // const { isAuthenticated } = useAuth0();
-  const isAuthenticated = false;
+  const isAuthenticated = true;
   const app = isAuthenticated ? AuthPages : Pages;
 
   return (

@@ -1,11 +1,9 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import candleJar from "../../media/backgroundImg.webp";
 import candle from "../../media/candle-burning-flame.png";
+import Button from "../button/Button";
 
 const LandingImage = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="w-full">
       <img
@@ -24,12 +22,7 @@ const LandingImage = () => {
             for your home
           </p>
         </div>
-        <button
-          onClick={() => navigate("/collection")}
-          className="font-sans p-4 bg-rose-300 rounded text-white hover:bg-rose-50 hover:text-rose-300 border-2 border-rose-50 hover:border-rose-300"
-        >
-          Discover our collection
-        </button>
+        <Button text="Discover our collection" route={"/collection"} />
       </div>
     </div>
   );

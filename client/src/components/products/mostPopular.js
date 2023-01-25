@@ -68,7 +68,7 @@ export const products = [
       {
         type: "Jar",
         id: "pinkJar",
-        colour: "pinkJar",
+        colour: "pink",
         img: pinkCandle,
         scents: ["vanilla", "pear"],
         price: 8.99,

@@ -12,7 +12,7 @@ const NavBar = () => {
   const styleIcons = "w-10 hover:cursor-pointer";
 
   return (
-    <nav className="sticky top-0 relative px-4 py-1 sm:flex flex-wrap bg-white drop-shadow-lg w-full z-10">
+    <nav className="sticky top-0 relative px-4 py-1 sm:flex flex-wrap bg-white drop-shadow-sm w-full z-10">
       <div className="sm:flex flex-row justify-around items-center w-full">
         <a
           href="/"

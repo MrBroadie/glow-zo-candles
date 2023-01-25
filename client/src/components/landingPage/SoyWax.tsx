@@ -1,5 +1,6 @@
 import React from "react";
 import blueAndWhiteCandle from "../../media/blue_and_white_jars_bed.jpeg";
+import Button from "../button/Button";
 
 const SoyWax = () => {
   return (
@@ -25,9 +26,7 @@ const SoyWax = () => {
             <br />✓ Handmade: All candles are craftly made with love.
           </li>
         </ul>
-        <button className="font-sans p-4 bg-rose-300 rounded text-white hover:bg-rose-50 hover:text-rose-300 border-2 border-slate-100 hover:border-rose-300 text-center w-fit self-start">
-          Learn more
-        </button>
+        <Button text="Learn more" route={"/about"} />
       </div>
       <div className="w-full flex justify-center">
         <img

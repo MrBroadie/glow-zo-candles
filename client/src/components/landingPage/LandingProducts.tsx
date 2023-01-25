@@ -1,5 +1,6 @@
 import React from "react";
 import { productsObject } from "../../interfaces/productsInterface";
+import Button from "../button/Button";
 import LandingProduct from "./LandingProduct";
 
 type Props = {
@@ -23,11 +24,7 @@ const LandingProducts = ({ products }: Props) => {
           return <LandingProduct product={product} key={product.name} />;
         })}
       </div>
-      <button className="font-sans pt-2 px-2 m-4 bg-rose-300 rounded text-white hover:bg-rose-50 hover:text-rose-300 border-2 border-white hover:border-rose-300 text-center">
-        See more
-        <br />
-        &#8964;
-      </button>
+      <Button text="View all" route={"/collection"} />
     </div>
   );
 };

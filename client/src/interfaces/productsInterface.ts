@@ -3,6 +3,7 @@ export interface productsObject {
   products: productObject[];
 }
 export interface productObject {
+  type: string;
   id: string;
   colour: string;
   img: string;
