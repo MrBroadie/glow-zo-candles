@@ -1,18 +1,13 @@
-import { productObject } from "./productsInterface";
-
 export interface BasketInterface {
   text: string;
-  route: string;
-  basket?: boolean;
-  productObject?: productObject;
-  qty?: number;
-  price?: number;
+  handleClickFunction: () => void;
 }
 
 export interface BasketProduct {
   productId: string | undefined;
   colour: string | undefined;
   img: string | undefined;
+  type: string | undefined;
   price: number | undefined;
   qty: number | undefined;
   scent: string;

@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { productsObject } from "../../interfaces/productsInterface";
 import Button from "../button/Button";
 import LandingProduct from "./LandingProduct";
@@ -8,6 +9,10 @@ type Props = {
 };
 
 const LandingProducts = ({ products }: Props) => {
+  const navigate = useNavigate();
+  const handleNavigation = () => {
+    return navigate("/collection");
+  };
   return (
     <div className="bg-white p-4 flex flex-col justfy-center items-center">
       <div className="flex flex-col items-center p-6">
@@ -24,7 +29,7 @@ const LandingProducts = ({ products }: Props) => {
           return <LandingProduct product={product} key={product.name} />;
         })}
       </div>
-      <Button text="View all" route={"/collection"} />
+      <Button text="View all" handleClickFunction={handleNavigation} />
     </div>
   );
 };

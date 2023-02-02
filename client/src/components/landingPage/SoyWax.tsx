@@ -1,8 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import blueAndWhiteCandle from "../../media/blue_and_white_jars_bed.jpeg";
 import Button from "../button/Button";
 
 const SoyWax = () => {
+  const navigate = useNavigate();
+  const handleNavigation = () => {
+    return navigate("/about");
+  };
   return (
     <div className="flex w-full items-center bg-slate-50 px-48 py-12 h-screen/66">
       <div className="w-full flex flex-col h-full justify-around mx-20 px-4 py-16">
@@ -26,7 +31,7 @@ const SoyWax = () => {
             <br />✓ Handmade: All candles are craftly made with love.
           </li>
         </ul>
-        <Button text="Learn more" route={"/about"} />
+        <Button text="Learn more" handleClickFunction={handleNavigation} />
       </div>
       <div className="w-full flex justify-center">
         <img

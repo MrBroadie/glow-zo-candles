@@ -48,7 +48,7 @@ export const collection = [
         id: "greenJar",
         colour: "green",
         img: pinkCandle,
-        scents: ["vanilla", "pear", "vanilla", "pear", "vanilla", "pear"],
+        scents: ["vanilla", "pear"],
         price: 8.99,
       },
       {

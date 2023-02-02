@@ -7,6 +7,7 @@ import ContactUsPage from "./defaultPages/ContactUsPage";
 import AboutPage from "./defaultPages/AboutPage";
 import BasketPage from "./defaultPages/BasketPage";
 import Collection from "./defaultPages/Collection";
+import OrderForm from "./authenticatedPages/OrderForm";
 
 export const defaultPages = [
   {
@@ -49,14 +50,14 @@ export const defaultPages = [
 
 export const authPages = [
   {
-    title: "ThankYou",
-    path: "/thankyou/:orderId",
-    element: <ThankYouPage />,
+    title: "OrderForm",
+    path: "/orderform",
+    element: <OrderForm />,
     showDefault: false,
   },
   {
-    title: "Orders",
-    path: "/orders/:userId",
+    title: "ThankYou",
+    path: "/thankyou",
     element: <ThankYouPage />,
     showDefault: false,
   },

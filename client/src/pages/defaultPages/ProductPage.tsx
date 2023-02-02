@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { addToBasket } from "../../app/basketSlice";
+import { useAppDispatch } from "../../app/hooks";
 import Button from "../../components/button/Button";
+import { useNavigate } from "react-router-dom";
 
 const ProductPage = () => {
   const [qty, setQty] = useState(1);
-
+  const navigate = useNavigate();
   const location = useLocation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
+
   const productObject = location.state.productObject;
 
   const price = productObject.price * qty;
@@ -16,7 +21,22 @@ const ProductPage = () => {
   const colour =
     productObject.colour[0].toUpperCase() +
     productObject.colour.substring(1).toLowerCase();
+  const dispatch = useAppDispatch();
 
+  const handleAddToBasket = () => {
+    const basketObject = {
+      productId: productObject.id,
+      colour: productObject.colour,
+      img: productObject.img,
+      type: productObject.type,
+      price: price,
+      qty: qty,
+      //TODO - get value from the form
+      scent: "vanilla",
+    };
+    dispatch(addToBasket(basketObject));
+    navigate("/basket");
+  };
   return (
     <div className="flex flex-col h-screen/66 bg-rose-100">
       <div className="flex h-4/6 m-4 justify-around">
@@ -65,11 +85,7 @@ const ProductPage = () => {
         <div className="flex w-1/2 h-full items-end p-2 justify-center bg-white rounded-r shadow-custom">
           <Button
             text="Add to basket"
-            route={"/basket"}
-            basket={true}
-            productObject={productObject}
-            qty={qty}
-            price={Number(price.toFixed(2))}
+            handleClickFunction={handleAddToBasket}
           />
         </div>
       </div>
