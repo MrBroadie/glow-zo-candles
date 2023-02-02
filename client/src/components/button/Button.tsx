@@ -1,18 +1,25 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { addToBasket } from "../basket/basketSlice";
+import { BasketInterface } from "../../interfaces/basketProductInterface";
+import { useAppSelector, useAppDispatch } from "../../hooks";
 
-type Props = {
-  text: string;
-  route: string;
-  basket?: boolean;
-};
-
-const Button = (props: Props) => {
+const Button = (props: BasketInterface) => {
+  const basket = useAppSelector((state) => state.basket.value);
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const handleAddToBasket = () => {
-    console.log(props.basket);
-    //Logic for useContext --> global basket state
+    const basketObject = {
+      productId: props.productObject?.id,
+      colour: props.productObject?.colour,
+      img: props.productObject?.img,
+      price: props.price,
+      qty: props.qty,
+      scent: "vanilla",
+    };
+
+    dispatch(addToBasket([...basket, basketObject]));
   };
 
   return (

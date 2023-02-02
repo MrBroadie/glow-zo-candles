@@ -10,7 +10,7 @@ export const products = [
     displayImg: yellowCandle,
     products: [
       {
-        type: "Jar",
+        type: "Book",
         id: "yellowJar",
         colour: "yellow",
         img: yellowCandle,
@@ -46,7 +46,7 @@ export const products = [
         id: "greenJar",
         colour: "green",
         img: pinkCandle,
-        scents: ["vanilla", "pear"],
+        scents: ["vanilla", "pear", "blue", "test"],
         price: 8.99,
       },
       {

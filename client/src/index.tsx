@@ -4,6 +4,8 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Auth0Provider } from "@auth0/auth0-react";
+import { store } from "./store";
+import { Provider } from "react-redux";
 
 // eslint-disable-next-line no-undef
 const domain = process.env.REACT_APP_AUTH0_DOMAIN as string;
@@ -17,14 +19,16 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Auth0Provider
-      domain={domain}
-      clientId={client}
-      // audience={audience}
-      // redirectUri={window.location.origin}
-    >
-      <App />
-    </Auth0Provider>
+    <Provider store={store}>
+      <Auth0Provider
+        domain={domain}
+        clientId={client}
+        // audience={audience}
+        // redirectUri={window.location.origin}
+      >
+        <App />
+      </Auth0Provider>
+    </Provider>
   </React.StrictMode>
 );
 

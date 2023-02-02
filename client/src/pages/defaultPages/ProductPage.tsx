@@ -63,7 +63,14 @@ const ProductPage = () => {
           </div>
         </div>
         <div className="flex w-1/2 h-full items-end p-2 justify-center bg-white rounded-r shadow-custom">
-          <Button text="Add to basket" route={"/basket"} basket={true} />
+          <Button
+            text="Add to basket"
+            route={"/basket"}
+            basket={true}
+            productObject={productObject}
+            qty={qty}
+            price={Number(price.toFixed(2))}
+          />
         </div>
       </div>
       <div className="flex justify-center h-full w-full items-center">

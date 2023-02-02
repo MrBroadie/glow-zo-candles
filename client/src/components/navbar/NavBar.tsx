@@ -13,9 +13,9 @@ const NavBar = () => {
 
   return (
     <nav className="sticky top-0 relative px-4 py-1 sm:flex flex-wrap bg-white drop-shadow-sm w-full z-10">
-      <div className="sm:flex flex-row justify-around items-center w-full">
+      <div className="sm:flex flex-row justify-around items-center w-full hover:cursor-pointer">
         <a
-          href="/"
+          onClick={() => navigate("/collection")}
           className="sm:inline-flex px-4 py-4 font-semibold hover:bg-rose-50 hover:text-rose-300 rounded border-2 border-white hover:border-rose-300"
         >
           <img src={candle} alt="logo" className={styleIcons} />
