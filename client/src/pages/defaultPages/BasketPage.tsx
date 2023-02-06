@@ -25,13 +25,32 @@ const BasketPage = () => {
 
   return (
     <>
-      {basket.length ? (
-        basket.map((el) => <BasketElements key={el.productId} product={el} />)
-      ) : (
-        <p>Basket is empty please add some products</p>
-      )}
-      <Button text="Proceed To Order" handleClickFunction={handleSendToOrder} />
-      <Button text="Continue Shopping" handleClickFunction={handleNavigation} />
+      <div className="flex flex-col items-center">
+        {basket.length ? (
+          basket.map((el) => <BasketElements key={el.productId} product={el} />)
+        ) : (
+          <p className="font-sans mt-4">
+            Basket is empty please add some products
+          </p>
+        )}
+        <div
+          className="flex
+        w-full justify-center my-4"
+        >
+          {basket.length ? (
+            <Button
+              text="Proceed To Order"
+              handleClickFunction={handleSendToOrder}
+            />
+          ) : (
+            <></>
+          )}
+          <Button
+            text="Continue Shopping"
+            handleClickFunction={handleNavigation}
+          />
+        </div>
+      </div>
     </>
   );
 };

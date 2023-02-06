@@ -6,7 +6,7 @@ interface BasketState {
   value: BasketProduct[];
 }
 
-interface SetQuantity {
+interface UpdateQuantity {
   productId: string;
   qty: number;
   price: number;
@@ -29,7 +29,10 @@ export const basketSlice = createSlice({
       //&& p.scent
       state.value = state.value.filter((p) => p.productId !== action.payload);
     },
-    updateItemInBasket: (state, action: PayloadAction<SetQuantity>) => {
+    updateItemWhenAddToBasket: (
+      state,
+      action: PayloadAction<UpdateQuantity>
+    ) => {
       state.value.forEach((p) => {
         if (p.productId === action.payload.productId) {
           // && p.productId === action.payload.scent
@@ -39,14 +42,15 @@ export const basketSlice = createSlice({
         }
       });
     },
-    incrementItemByOne: (state, action: PayloadAction<SetQuantity>) => {
+    updateItemInBasket: (state, action: PayloadAction<UpdateQuantity>) => {
       state.value.forEach((p) => {
-        if (p.productId === action.payload.productId) return (p.qty += 1);
-      });
-    },
-    decrementItemByOne: (state, action: PayloadAction<SetQuantity>) => {
-      state.value.forEach((p) => {
-        if (p.productId === action.payload.productId) return (p.qty -= 1);
+        if (p.productId === action.payload.productId) {
+          // && p.productId === action.payload.scent
+          console.log(action.payload);
+          p.qty = p.qty + action.payload.qty;
+          const price = action.payload.price * p.qty;
+          p.price = Number(price.toFixed(2));
+        }
       });
     },
     emptyBasket: (state) => {
@@ -58,6 +62,7 @@ export const basketSlice = createSlice({
 export const {
   addToBasket,
   removeItemFromBasket,
+  updateItemWhenAddToBasket,
   updateItemInBasket,
   emptyBasket,
 } = basketSlice.actions;

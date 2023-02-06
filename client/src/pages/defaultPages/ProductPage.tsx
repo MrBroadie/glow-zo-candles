@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import {
   addToBasket,
   selectBasket,
-  updateItemInBasket,
+  updateItemWhenAddToBasket,
 } from "../../app/basketSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import Button from "../../components/button/Button";
@@ -44,7 +44,7 @@ const ProductPage = () => {
         if (basket[i].productId === basketObject.productId) {
           // && basket[i].scent === basketObject.productId
           dispatch(
-            updateItemInBasket({
+            updateItemWhenAddToBasket({
               productId: basketObject.productId,
               qty: qty,
               price: productObject.price,
