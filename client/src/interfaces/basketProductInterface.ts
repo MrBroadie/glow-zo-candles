@@ -4,11 +4,11 @@ export interface BasketInterface {
 }
 
 export interface BasketProduct {
-  productId: string | undefined;
-  colour: string | undefined;
-  img: string | undefined;
-  type: string | undefined;
-  price: number | undefined;
-  qty: number | undefined;
+  productId: string;
+  colour: string;
+  img: string;
+  type: string;
+  price: number;
+  qty: number;
   scent: string;
 }

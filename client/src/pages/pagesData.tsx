@@ -3,7 +3,7 @@ import LandingPage from "./defaultPages/LandingPage";
 import ErrorPage from "./defaultPages/ErrorPage";
 import ThankYouPage from "./authenticatedPages/ThankYouPage";
 import ProductPage from "./defaultPages/ProductPage";
-import ContactUsPage from "./defaultPages/ContactUsPage";
+import ContactUsPage from "./authenticatedPages/ContactUsPage";
 import AboutPage from "./defaultPages/AboutPage";
 import BasketPage from "./defaultPages/BasketPage";
 import Collection from "./defaultPages/Collection";
@@ -20,12 +20,6 @@ export const defaultPages = [
     title: "Product",
     path: "/product/:id",
     element: <ProductPage />,
-    showDefault: true,
-  },
-  {
-    title: "Contact",
-    path: "/contact",
-    element: <ContactUsPage />,
     showDefault: true,
   },
   {
@@ -49,6 +43,12 @@ export const defaultPages = [
 ];
 
 export const authPages = [
+  {
+    title: "Contact",
+    path: "/contact",
+    element: <ContactUsPage />,
+    showDefault: true,
+  },
   {
     title: "OrderForm",
     path: "/orderform",

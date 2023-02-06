@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { addToBasket } from "../../app/basketSlice";
-import { useAppDispatch } from "../../app/hooks";
+import {
+  addToBasket,
+  selectBasket,
+  updateItemInBasket,
+} from "../../app/basketSlice";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import Button from "../../components/button/Button";
 import { useNavigate } from "react-router-dom";
 
@@ -22,7 +26,7 @@ const ProductPage = () => {
     productObject.colour[0].toUpperCase() +
     productObject.colour.substring(1).toLowerCase();
   const dispatch = useAppDispatch();
-
+  const basket = useAppSelector(selectBasket);
   const handleAddToBasket = () => {
     const basketObject = {
       productId: productObject.id,
@@ -34,7 +38,28 @@ const ProductPage = () => {
       //TODO - get value from the form
       scent: "vanilla",
     };
-    dispatch(addToBasket(basketObject));
+
+    const checkBaksetItem = () => {
+      for (let i = 0; i < basket.length; i++) {
+        if (basket[i].productId === basketObject.productId) {
+          // && basket[i].scent === basketObject.productId
+          dispatch(
+            updateItemInBasket({
+              productId: basketObject.productId,
+              qty: qty,
+              price: productObject.price,
+            })
+          );
+          return true;
+        }
+      }
+      return false;
+    };
+
+    if (basket.length) {
+      if (!checkBaksetItem()) dispatch(addToBasket(basketObject));
+    } else dispatch(addToBasket(basketObject));
+
     navigate("/basket");
   };
   return (

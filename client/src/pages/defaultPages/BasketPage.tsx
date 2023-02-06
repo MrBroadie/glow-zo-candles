@@ -30,7 +30,7 @@ const BasketPage = () => {
       ) : (
         <p>Basket is empty please add some products</p>
       )}
-      <Button text="Order" handleClickFunction={handleSendToOrder} />
+      <Button text="Proceed To Order" handleClickFunction={handleSendToOrder} />
       <Button text="Continue Shopping" handleClickFunction={handleNavigation} />
     </>
   );
