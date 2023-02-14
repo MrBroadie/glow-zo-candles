@@ -46,7 +46,6 @@ export const basketSlice = createSlice({
       state.value.forEach((p) => {
         if (p.productId === action.payload.productId) {
           // && p.productId === action.payload.scent
-          console.log(action.payload);
           p.qty = p.qty + action.payload.qty;
           const price = action.payload.price * p.qty;
           p.price = Number(price.toFixed(2));

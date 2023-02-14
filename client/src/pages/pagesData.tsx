@@ -47,7 +47,7 @@ export const authPages = [
     title: "Contact",
     path: "/contact",
     element: <ContactUsPage />,
-    showDefault: true,
+    showDefault: false,
   },
   {
     title: "OrderForm",

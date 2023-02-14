@@ -8,6 +8,7 @@ import {
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import Button from "../../components/button/Button";
 import { useNavigate } from "react-router-dom";
+import { incrementCost } from "../../app/costSlice";
 
 const ProductPage = () => {
   const [qty, setQty] = useState(1);
@@ -25,8 +26,10 @@ const ProductPage = () => {
   const colour =
     productObject.colour[0].toUpperCase() +
     productObject.colour.substring(1).toLowerCase();
+
   const dispatch = useAppDispatch();
   const basket = useAppSelector(selectBasket);
+
   const handleAddToBasket = () => {
     const basketObject = {
       productId: productObject.id,
@@ -59,9 +62,10 @@ const ProductPage = () => {
     if (basket.length) {
       if (!checkBaksetItem()) dispatch(addToBasket(basketObject));
     } else dispatch(addToBasket(basketObject));
-
+    dispatch(incrementCost(price));
     navigate("/basket");
   };
+
   return (
     <div className="flex flex-col h-screen/66 bg-rose-100">
       <div className="flex h-4/6 m-4 justify-around">

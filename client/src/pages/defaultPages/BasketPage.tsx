@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { selectBasket } from "../../app/basketSlice";
+import { selectCost } from "../../app/costSlice";
 import { useAppSelector } from "../../app/hooks";
 import BasketElements from "../../components/basket/BasketElement";
 import Button from "../../components/button/Button";
 
 const BasketPage = () => {
   const basket = useAppSelector(selectBasket);
-  console.log(basket);
+  const totalCost = useAppSelector(selectCost);
   const navigate = useNavigate();
 
   const handleNavigation = () => {
@@ -27,7 +28,9 @@ const BasketPage = () => {
     <>
       <div className="flex flex-col items-center">
         {basket.length ? (
-          basket.map((el) => <BasketElements key={el.productId} product={el} />)
+          basket.map((el) => (
+            <BasketElements basket={true} key={el.productId} product={el} />
+          ))
         ) : (
           <p className="font-sans mt-4">
             Basket is empty please add some products
@@ -37,9 +40,10 @@ const BasketPage = () => {
           className="flex
         w-full justify-center my-4"
         >
+          {totalCost > 0 ? <p>Total cost: {totalCost.toFixed(2)}</p> : <></>}
           {basket.length ? (
             <Button
-              text="Proceed To Order"
+              text="Continue to review order"
               handleClickFunction={handleSendToOrder}
             />
           ) : (

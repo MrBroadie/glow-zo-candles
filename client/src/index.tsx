@@ -11,8 +11,6 @@ import { Provider } from "react-redux";
 const domain = process.env.REACT_APP_AUTH0_DOMAIN as string;
 // eslint-disable-next-line no-undef
 const client = process.env.REACT_APP_AUTH0_CLIENT_ID as string;
-// eslint-disable-next-line no-undef
-// const audience = process.env.REACT_APP_AUTH0_AUDIENCE as string;
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
