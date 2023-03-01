@@ -18,12 +18,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Auth0Provider
-        domain={domain}
-        clientId={client}
-        // audience={audience}
-        // redirectUri={window.location.origin}
-      >
+      <Auth0Provider domain={domain} clientId={client}>
         <App />
       </Auth0Provider>
     </Provider>
