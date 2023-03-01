@@ -29,7 +29,11 @@ const BasketPage = () => {
       <div className="flex flex-col items-center">
         {basket.length ? (
           basket.map((el) => (
-            <BasketElements basket={true} key={el.productId} product={el} />
+            <BasketElements
+              basket={true}
+              key={el.productId + el.scent}
+              product={el}
+            />
           ))
         ) : (
           <p className="font-sans mt-4">
@@ -40,14 +44,14 @@ const BasketPage = () => {
           className="flex
         w-full justify-center my-4"
         >
-          {totalCost > 0 ? <p>Total cost: {totalCost.toFixed(2)}</p> : <></>}
-          {basket.length ? (
-            <Button
-              text="Continue to review order"
-              handleClickFunction={handleSendToOrder}
-            />
-          ) : (
-            <></>
+          {basket.length > 0 && (
+            <>
+              <p>Total cost: {totalCost.toFixed(2)}</p>
+              <Button
+                text="Continue to review order"
+                handleClickFunction={handleSendToOrder}
+              />
+            </>
           )}
           <Button
             text="Continue Shopping"

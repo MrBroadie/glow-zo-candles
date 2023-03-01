@@ -14,9 +14,11 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <NavBar />
-        {app}
-        <Footer />
+        <div className="flex flex-col justify-between min-h-screen">
+          <NavBar />
+          {app}
+          <Footer />
+        </div>
       </BrowserRouter>
     </>
   );

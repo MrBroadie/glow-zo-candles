@@ -25,7 +25,12 @@ const BasketElements = (props: Props) => {
 
   const dispatch = useAppDispatch();
   const handleRemoveItem = () => {
-    dispatch(removeItemFromBasket(props.product.productId));
+    dispatch(
+      removeItemFromBasket({
+        productId: props.product.productId,
+        scent: props.product.scent,
+      })
+    );
     dispatch(decrementCost(props.product.price));
   };
   return (
@@ -44,6 +49,10 @@ const BasketElements = (props: Props) => {
             <p className="font-sans text-sm md:text-base">
               £{props.product.price.toFixed(2)}
             </p>
+            <p className="font-sans text-sm md:text-base">
+              {props.product.scent}
+            </p>
+
             <div className="flex w-1/4 justify-center">
               {props.basket && (
                 <button
@@ -54,6 +63,7 @@ const BasketElements = (props: Props) => {
                       dispatch(
                         updateItemInBasket({
                           productId: props.product.productId,
+                          scent: props.product.scent,
                           qty: -1,
                           price: price,
                         })
@@ -73,6 +83,7 @@ const BasketElements = (props: Props) => {
                     dispatch(
                       updateItemInBasket({
                         productId: props.product.productId,
+                        scent: props.product.scent,
                         qty: 1,
                         price: price,
                       })

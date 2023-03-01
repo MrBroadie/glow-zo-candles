@@ -11,15 +11,16 @@ import { useNavigate } from "react-router-dom";
 import { incrementCost } from "../../app/costSlice";
 
 const ProductPage = () => {
-  const [qty, setQty] = useState(1);
-  const navigate = useNavigate();
   const location = useLocation();
+  const productObject = location.state.productObject;
+
+  const [qty, setQty] = useState(1);
+  const [scent, setScent] = useState(productObject?.scents[0]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
-
-  const productObject = location.state.productObject;
 
   const price = productObject.price * qty;
 
@@ -38,18 +39,21 @@ const ProductPage = () => {
       type: productObject.type,
       price: price,
       qty: qty,
-      //TODO - get value from the form
-      scent: "vanilla",
+      scent,
     };
+    console.log(basketObject);
 
     const checkBaksetItem = () => {
       for (let i = 0; i < basket.length; i++) {
-        if (basket[i].productId === basketObject.productId) {
-          // && basket[i].scent === basketObject.productId
+        if (
+          basket[i].productId === basketObject.productId &&
+          basket[i].scent === basketObject.scent
+        ) {
           dispatch(
             updateItemWhenAddToBasket({
               productId: basketObject.productId,
-              qty: qty,
+              scent,
+              qty,
               price: productObject.price,
             })
           );
@@ -82,7 +86,10 @@ const ProductPage = () => {
           </p>
           <div className="flex">
             <p>Scent: </p>
-            <select className="w-full text-center">
+            <select
+              className="w-full text-center"
+              onChange={(event) => setScent(event.target.value)}
+            >
               {productObject.scents.map((scent: string) => {
                 return (
                   <option key={scent} value={scent}>

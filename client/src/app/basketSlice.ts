@@ -8,12 +8,15 @@ interface BasketState {
 
 interface UpdateQuantity {
   productId: string;
+  scent: string;
   qty: number;
   price: number;
 }
 
-type Id = string | undefined;
-
+interface removeProduct {
+  productId: string;
+  scent: string;
+}
 const initialState: BasketState = {
   value: [],
 };
@@ -25,17 +28,23 @@ export const basketSlice = createSlice({
     addToBasket: (state, action: PayloadAction<BasketProduct>) => {
       state.value = [...state.value, action.payload];
     },
-    removeItemFromBasket: (state, action: PayloadAction<Id>) => {
-      //&& p.scent
-      state.value = state.value.filter((p) => p.productId !== action.payload);
+    removeItemFromBasket: (state, action: PayloadAction<removeProduct>) => {
+      state.value = state.value.filter(
+        (p) =>
+          (p.productId === action.payload.productId &&
+            p.scent !== action.payload.scent) ||
+          p.productId !== action.payload.productId
+      );
     },
     updateItemWhenAddToBasket: (
       state,
       action: PayloadAction<UpdateQuantity>
     ) => {
       state.value.forEach((p) => {
-        if (p.productId === action.payload.productId) {
-          // && p.productId === action.payload.scent
+        if (
+          p.productId === action.payload.productId &&
+          p.scent === action.payload.scent
+        ) {
           p.qty = p.qty + action.payload.qty;
           const price = action.payload.price * p.qty;
           p.price = Number(price.toFixed(2));
@@ -44,8 +53,10 @@ export const basketSlice = createSlice({
     },
     updateItemInBasket: (state, action: PayloadAction<UpdateQuantity>) => {
       state.value.forEach((p) => {
-        if (p.productId === action.payload.productId) {
-          // && p.productId === action.payload.scent
+        if (
+          p.productId === action.payload.productId &&
+          p.scent === action.payload.scent
+        ) {
           p.qty = p.qty + action.payload.qty;
           const price = action.payload.price * p.qty;
           p.price = Number(price.toFixed(2));
