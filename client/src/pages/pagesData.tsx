@@ -40,15 +40,15 @@ export const defaultPages = [
     element: <Collection />,
     showDefault: true,
   },
-];
-
-export const authPages = [
   {
     title: "Contact",
     path: "/contact",
     element: <ContactUsPage />,
-    showDefault: false,
+    showDefault: true,
   },
+];
+
+export const authPages = [
   {
     title: "OrderForm",
     path: "/orderform",

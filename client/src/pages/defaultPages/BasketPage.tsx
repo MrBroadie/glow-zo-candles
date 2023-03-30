@@ -1,14 +1,18 @@
+import { useAuth0 } from "@auth0/auth0-react";
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { selectBasket } from "../../app/basketSlice";
 import { selectCost } from "../../app/costSlice";
 import { useAppSelector } from "../../app/hooks";
+import { selectUser } from "../../app/userSlice";
 import BasketElements from "../../components/basket/BasketElement";
 import Button from "../../components/button/Button";
 
 const BasketPage = () => {
+  const { loginWithPopup } = useAuth0();
   const basket = useAppSelector(selectBasket);
   const totalCost = useAppSelector(selectCost);
+  const authUser = useAppSelector(selectUser);
   const navigate = useNavigate();
 
   const handleNavigation = () => {
@@ -49,7 +53,9 @@ const BasketPage = () => {
               <p>Total cost: {totalCost.toFixed(2)}</p>
               <Button
                 text="Continue to review order"
-                handleClickFunction={handleSendToOrder}
+                handleClickFunction={
+                  authUser.sub.length ? handleSendToOrder : loginWithPopup
+                }
               />
             </>
           )}

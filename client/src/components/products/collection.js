@@ -42,7 +42,6 @@ export const collection = [
       },
       {
         type: "Jar",
-
         id: "blueJar",
         colour: "blue",
         img: blueCandle,
@@ -565,7 +564,7 @@ export const collection = [
       },
       {
         type: "Wax Melt",
-        id: "greyWaxMelt",
+        id: "blackWaxMelt",
         colour: "black",
         img: pinkCandle,
         scents: [
