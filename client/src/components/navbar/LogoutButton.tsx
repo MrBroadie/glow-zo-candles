@@ -6,9 +6,10 @@ type Props = {
   styleIcons: string;
 };
 
+//don't want to reload the page on login or logout
 const LogoutButton = (props: Props) => {
   const { logout } = useAuth0();
-
+  //https://auth0.com/blog/redux-practical-tutorial/
   return (
     <>
       <img
