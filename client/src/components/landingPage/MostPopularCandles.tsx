@@ -19,7 +19,7 @@ const MostPopularCandles = (props: Props) => {
           state: { productObject: props.productObject },
         })
       }
-      className="bg-slate-50 m-2 flex flex-col shadow-md w-5/6 text-slate-500 hover:text-rose-300 hover:cursor-pointer"
+      className="bg-slate-50 m-2 flex flex-col shadow-md lg:w-72 w-52 text-slate-500 hover:text-rose-300 hover:cursor-pointer"
     >
       <img
         src={props.productObject.img}

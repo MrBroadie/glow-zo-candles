@@ -13,8 +13,9 @@ const LandingProducts = ({ products }: Props) => {
   const handleNavigation = () => {
     return navigate("/collection");
   };
+
   return (
-    <div className="bg-white p-4 flex flex-col justfy-center items-center">
+    <div className="bg-white p-4 flex flex-col justify-center items-center">
       <div className="flex flex-col items-center p-6">
         <h2 className="font-sans text-xl sm:text-2xl md:text-3xl lg:text-4xl ">
           Most popular
@@ -23,12 +24,12 @@ const LandingProducts = ({ products }: Props) => {
           Order for you or for your loved ones
         </p>
       </div>
-      <div className="flex w-5/6 h-full p-4">
-        {/* add scrollable div */}
+      <div className="grid grid-flow-col overflow-x-auto lg:w-3/4 w-full hide-scrollbar">
         {products.map((product) => {
           return <LandingProduct product={product} key={product.name} />;
         })}
       </div>
+
       <Button text="View all" handleClickFunction={handleNavigation} />
     </div>
   );

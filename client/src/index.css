@@ -5,3 +5,6 @@
 * {
   @apply font-serif tracking-wide;
 }
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

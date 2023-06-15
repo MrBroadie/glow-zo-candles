@@ -19,4 +19,52 @@ export const testimonials = [
     rating: 5,
     review: "Reccomend to anyone",
   },
+  {
+    name: "Thomas Campbell",
+    img: yellowCandle,
+    rating: 5,
+    review: "Reccomend to anyone",
+  },
+  {
+    name: "Thomas Campbell",
+    img: yellowCandle,
+    rating: 5,
+    review: "Reccomend to anyone",
+  },
+  {
+    name: "Thomas Campbell",
+    img: yellowCandle,
+    rating: 5,
+    review: "Reccomend to anyone",
+  },
+  {
+    name: "Thomas Campbell",
+    img: yellowCandle,
+    rating: 5,
+    review: "Reccomend to anyone",
+  },
+  {
+    name: "Thomas Campbell",
+    img: yellowCandle,
+    rating: 5,
+    review: "Reccomend to anyone",
+  },
+  {
+    name: "Thomas Campbell",
+    img: yellowCandle,
+    rating: 5,
+    review: "Reccomend to anyone",
+  },
+  {
+    name: "Thomas Campbell",
+    img: yellowCandle,
+    rating: 5,
+    review: "Reccomend to anyone",
+  },
+  {
+    name: "Thomas Campbell",
+    img: yellowCandle,
+    rating: 5,
+    review: "Reccomend to anyone",
+  },
 ];

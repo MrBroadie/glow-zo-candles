@@ -8,7 +8,7 @@ type Props = {
 
 const Testimonials = (props: Props) => {
   return (
-    <div className="bg-rose-50 relative p-4 flex flex-col justfy-center items-center">
+    <div className="bg-rose-50 p-4">
       <div className="flex flex-col items-center p-6">
         <h2 className="font-sans text-xl sm:text-2xl md:text-3xl lg:text-4xl ">
           Testimonials
@@ -17,30 +17,34 @@ const Testimonials = (props: Props) => {
           Some quotes from our happy customers
         </p>
       </div>
-      <div className="w-full flex justify-center h-screen/50 items-center">
-        {props.testimonials.map((testimonial) => {
-          return (
-            <div
-              key={testimonial.name}
-              className="flex flex-col items-center justify-around p-6 bg-white rounded-lg shadow-lg w-1/4 m-4 h-4/6"
-            >
-              <img
-                src={testimonial.img}
-                alt="image of person"
-                className="w-20 rounded-full"
-              />
-              <div className="flex justify-between w-2/6">
-                <Rating rating={testimonial.rating} />
+      <div className="w-full flex justify-center h-3/4 items-center">
+        <div
+          className={` hide-scrollbar grid grid-flow-col overflow-x-auto w-full`}
+        >
+          {props.testimonials.map((testimonial) => {
+            return (
+              <div
+                key={testimonial.name}
+                className="flex flex-col items-center justify-around p-6 w-52 lg:w-80 bg-white rounded-lg shadow-lg m-4"
+              >
+                <img
+                  src={testimonial.img}
+                  alt="image of person"
+                  className="w-20 rounded-full hidden lg:flex"
+                />
+                <p className="font-sans text-sm lg:text-base text-slate-500 p-2">
+                  {testimonial.name}
+                </p>
+                <p className="font-sans text-center text-sm lg:text-base text-black p-2">
+                  &quot;{testimonial.review}&quot;
+                </p>
+                <div className="flex justify-between p-2">
+                  <Rating rating={testimonial.rating} />
+                </div>
               </div>
-              <p className="font-sans text-sm md:text-lg text-black">
-                &quot;{testimonial.review}&quot;
-              </p>
-              <p className="font-sans text-sm md:text-base text-slate-500">
-                {testimonial.name}
-              </p>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
   );
