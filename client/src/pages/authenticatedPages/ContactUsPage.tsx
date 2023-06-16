@@ -14,7 +14,11 @@ const ContactUsPage = () => {
       ) : (
         <>
           <p>Please login to view contact information</p>{" "}
-          <Button text="Login" handleClickFunction={loginWithPopup} />
+          <Button
+            css="font-sans"
+            text="Login"
+            handleClickFunction={loginWithPopup}
+          />
         </>
       )}
     </>

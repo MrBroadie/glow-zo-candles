@@ -1,4 +1,5 @@
 export interface BasketInterface {
+  css: string;
   text: string;
   handleClickFunction: () => void;
   type?: "submit" | "reset" | "button" | undefined;

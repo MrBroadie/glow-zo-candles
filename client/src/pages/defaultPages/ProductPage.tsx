@@ -120,6 +120,7 @@ const ProductPage = () => {
         </div>
         <div className="flex w-1/2 h-full items-end p-2 justify-center bg-white rounded-r shadow-custom">
           <Button
+            css="font-sans"
             text="Add to basket"
             handleClickFunction={handleAddToBasket}
           />
