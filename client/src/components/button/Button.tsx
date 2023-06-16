@@ -6,7 +6,7 @@ const Button = (props: BasketInterface) => {
     <button
       type={props.type}
       onClick={props.handleClickFunction}
-      className="font-sans p-4 bg-rose-300 rounded text-white hover:bg-rose-50 hover:text-rose-300 border-2 border-white hover:border-rose-300 text-center w-1/4"
+      className={`${props.css} w-48 p-2 hover:bg-rose-400 rounded text-white bg-slate-300 hover:text-white  text-center`}
     >
       {props.text}
     </button>

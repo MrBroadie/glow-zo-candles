@@ -30,7 +30,11 @@ const LandingProducts = ({ products }: Props) => {
         })}
       </div>
 
-      <Button text="View all" handleClickFunction={handleNavigation} />
+      <Button
+        css="font-sans mt-2"
+        text="View all"
+        handleClickFunction={handleNavigation}
+      />
     </div>
   );
 };

@@ -52,6 +52,7 @@ const BasketPage = () => {
             <>
               <p>Total cost: {totalCost.toFixed(2)}</p>
               <Button
+                css="font-sans"
                 text="Continue to review order"
                 handleClickFunction={
                   authUser.sub.length ? handleSendToOrder : loginWithPopup
@@ -60,6 +61,7 @@ const BasketPage = () => {
             </>
           )}
           <Button
+            css="font-sans"
             text="Continue Shopping"
             handleClickFunction={handleNavigation}
           />

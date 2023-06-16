@@ -8,7 +8,7 @@ type Props = {
 
 const Testimonials = (props: Props) => {
   return (
-    <div className="bg-rose-50 p-4">
+    <div className="bg-rose-50 p-4 lg:h-screen/66  h-screen/50">
       <div className="flex flex-col items-center p-6">
         <h2 className="font-sans text-xl sm:text-2xl md:text-3xl lg:text-4xl ">
           Testimonials
