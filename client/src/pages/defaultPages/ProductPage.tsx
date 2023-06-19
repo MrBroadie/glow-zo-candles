@@ -71,20 +71,20 @@ const ProductPage = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen/66 bg-rose-100">
-      <div className="flex h-4/6 m-4 justify-around">
-        <div className="w-full flex flex-col items-center mx-4">
+    <div className="flex flex-col min-h-screen bg-rose-100 items-center justify-around">
+      <div className="flex flex-col md:flex-row m-4 items-center justify-center  w-full">
+        <div className="w-96 h-72 lg:h-96 lg:w-2/6 flex flex-col items-center mx-4 bg-white ">
           <img
             src={productObject.img}
             alt={productObject.id}
-            className="h-full object-contain w-full bg-slate-50 py-10 shadow-custom rounded"
+            className="h-full object-contain w-52  py-10 rounded"
           />
         </div>
-        <div className=" w-1/2 h-full flex flex-col justify-between bg-white p-2 rounded-l shadow-custom">
-          <p className=" font-sans text-sm md:text-xl underline">
+        <div className=" w-96 lg:w-2/6 h-72 lg:h-96 flex flex-col justify-around items-center p-2 bg-white rounded-l">
+          <p className=" font-sans text-md md:text-xl underline">
             {colour} {productObject.type}
           </p>
-          <div className="flex">
+          <div className="flex w-full">
             <p>Scent: </p>
             <select
               className="w-full text-center"
@@ -117,8 +117,6 @@ const ProductPage = () => {
               £{price.toFixed(2)}
             </p>
           </div>
-        </div>
-        <div className="flex w-1/2 h-full items-end p-2 justify-center bg-white rounded-r shadow-custom">
           <Button
             css="font-sans"
             text="Add to basket"
@@ -127,7 +125,7 @@ const ProductPage = () => {
         </div>
       </div>
       <div className="flex justify-center h-full w-full items-center">
-        <p className=" font-sans text-sm md:text-lg">
+        <p className=" font-sans text-sm md:text-lg text-center m-4">
           All handmade with natural soy wax. GlowZo is the perfect companion for
           your home
         </p>

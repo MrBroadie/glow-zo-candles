@@ -8,6 +8,7 @@ export const collection = [
   {
     name: "Jar",
     displayImg: yellowCandle,
+    color: "bg-slate-100",
     products: [
       {
         type: "Jar",
@@ -205,6 +206,7 @@ export const collection = [
   {
     name: "Bubble",
     displayImg: yellowCandle,
+    color: "bg-slate-100",
     products: [
       {
         type: "Bubble",
@@ -402,6 +404,7 @@ export const collection = [
   {
     name: "Wax Melts",
     displayImg: yellowCandle,
+    color: "bg-slate-100",
     products: [
       {
         type: "Wax Melt",
@@ -599,6 +602,7 @@ export const collection = [
   {
     name: "Wax Melt Gift Set",
     displayImg: yellowCandle,
+    color: "bg-slate-100",
     products: [
       {
         type: "Wax Melt Gift Set",

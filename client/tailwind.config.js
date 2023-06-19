@@ -3,6 +3,9 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    minHeight: {
+      screen: "70vh",
+    },
     fontFamily: {
       sans: ["Helvetica", "Arial", "sans-serif"],
       serif: ["Merriweather", "serif"],

@@ -14,8 +14,8 @@ const SoyWax = () => {
         <div className="w-full flex flex-col h-full justify-around lg:px-72 md:px-24 px-12">
           <div className="flex flex-col justify-around lg:h-60 h-full">
             <h1 className="font-sans text-xl lg:text-2xl md:text-xl w-full">
-              Clean and <br />
-              fragrant soy wax
+              Support local <br />
+              independent business
             </h1>
             <p className="font-sans text-sm md:text-base text-rose-300">
               Made for your home and your wellness
